@@ -1,37 +1,27 @@
-using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
+using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
 
-    [SerializeField] private AudioSource music;
-    [SerializeField] private GameObject _mainPanel;
-    [SerializeField] private GameObject[] _textUI;
+    [SerializeField] private AudioSource _music;
     [SerializeField] private GameObject _player;
-     private bool _gameStarted = false;
+    [SerializeField] private GameObject _scoreText;
+    [SerializeField] private Animator _animatorRule;
 
     private void Start()
     {
-        music.Stop();
+        _music.Pause();
+        gameObject.SetActive(true);
+        _animatorRule.SetBool("StartRule",true);
+        Time.timeScale = 1f;
     }
     public void StartGame(){
-       if (!_gameStarted)
-        {
-          
-            GameObject.FindGameObjectWithTag("SpawnPoint").GetComponent<SpawnBlocks>().StartSpawning();
-            GameObject.FindGameObjectWithTag("Animations").GetComponent<AnimationsScripts>().StopAnimation();
-            GameObject.FindGameObjectWithTag("Animations").GetComponent<AnimationsScripts>().StartAnimation(); 
-            _gameStarted = true;
-            _mainPanel.SetActive(true);
-            foreach (GameObject i in _textUI){
-                i.SetActive(false);
-            }  
-            _player.transform.position = new Vector3(-0.1175f,-4.1638f,0);
-            Time.timeScale = 1f;
-        }
-          // music.loop = true;
-            //music.Play();
-        //} 
+        _music.Play();
+        GameObject.FindGameObjectWithTag("SpawnPoint").GetComponent<SpawnBlocks>().StartSpawning();
+        _player.transform.position = new Vector3(0f, -4.06f,0f);
+        _scoreText.SetActive(true);
+        gameObject.SetActive(false);
+        _animatorRule.SetBool("StartRule",false);
     }
 }

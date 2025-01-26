@@ -1,22 +1,23 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed;
-    [SerializeField] private GameObject _panel;
-    [SerializeField] private GameObject _panell;
-   // private int rand;
-    //public Sprite[] sprites;
+    [SerializeField] private GameObject _deathPanel;
+    [SerializeField] private GameObject _mainPanel;
     Rigidbody2D _player;
-    void Start()
+    [SerializeField] private Sprite[] _spritePlayer;
+
+    void Awake()
     {
-       // rand = Random.Range(0,sprites.Length);
-       // GetComponent<SpriteRenderer>().sprite = sprites[rand];
         _player = GetComponent<Rigidbody2D>();
-        
+        _spritePlayer = Resources.LoadAll<Sprite>("Skins");
+        int _selectSkinIndex = PlayerPrefs.GetInt("SelectedSkinIndex",0);
+        if (_selectSkinIndex >= 0 && _selectSkinIndex < _spritePlayer.Length)
+        {
+            GetComponent<SpriteRenderer>().sprite = _spritePlayer[_selectSkinIndex];
+        }
     }
 
     void Update()
@@ -27,11 +28,11 @@ public class Player : MonoBehaviour
             
             if(_tochPos.x<0)
             {
-                _player.AddForce(Vector2.left * _moveSpeed);
+                _player.velocity = Vector2.left * _moveSpeed;
             }
-            else
+            else if(_tochPos.x >0)
             {
-                _player.AddForce(Vector2.right * _moveSpeed);    
+                _player.velocity = Vector2.right * _moveSpeed;    
             }
 
         }
@@ -46,8 +47,9 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.tag == "Block")
         {
-            _panel.SetActive(true);
-            _panell.SetActive(false);
+            _deathPanel.SetActive(true);
+            _mainPanel.SetActive(false);
+            GameObject.FindGameObjectWithTag("TextScore").GetComponent<TextScore>().ShowHightScore();
             Time.timeScale = 0;
         }
     }
