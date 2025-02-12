@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class Continue : MonoBehaviour
 {
-    [SerializeField] private GameObject _panel;
-    [SerializeField] private GameObject _panell;
+    [SerializeField] private GameObject _panelPause;
+    [SerializeField] private GameObject _mainPanell;
     public void Coontinue()
     {
-        _panel.SetActive(false);
-        _panell.SetActive(true);
+        _panelPause.SetActive(false);
+        _mainPanell.SetActive(true);
         Time.timeScale = 1f;
     }
 }

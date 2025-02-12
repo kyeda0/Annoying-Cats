@@ -19,12 +19,5 @@ public class SpawnBlocks : MonoBehaviour
         spawnPos.x = Random.Range(-_maxX, _maxX);
         var _random = Random.Range(0,_blocks.Length);
         Instantiate(_blocks[_random], spawnPos, Quaternion.identity); 
-        BoostSpawnRate();
-    }
-
-    private void BoostSpawnRate(){
-        if(GameObject.FindWithTag("TextScore").GetComponent<TextScore>()._currentScore % 5 == 0 ){
-            _spawnRate -= 0.1f;
-        }
     }
 }

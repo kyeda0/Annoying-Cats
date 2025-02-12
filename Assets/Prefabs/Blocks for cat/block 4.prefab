@@ -10,9 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 411089655403397459}
   - component: {fileID: 3130704049380604263}
-  - component: {fileID: 2426793454474638291}
-  - component: {fileID: 1962248695702627670}
-  - component: {fileID: 7164618609261827697}
+  - component: {fileID: -4640345039400667282}
+  - component: {fileID: 3677329261974430914}
   m_Layer: 0
   m_Name: block 4
   m_TagString: Block
@@ -87,7 +86,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2426793454474638291
+--- !u!114 &-4640345039400667282
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,11 +95,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3668633417697871735}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 644c1673b6d983147958292676f9fe7e, type: 3}
+  m_Script: {fileID: 11500000, guid: c9c12848d8145e04e87ae395a85a65d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &1962248695702627670
-BoxCollider2D:
+  _fallSpeed: 0.5
+--- !u!68 &3677329261974430914
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -128,46 +128,36 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.83, y: 2.61}
-    newSize: {x: 8, y: 8}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.91, y: 2.95}
   m_EdgeRadius: 0
---- !u!50 &7164618609261827697
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3668633417697871735}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Points:
+  - {x: 0.5698627, y: -1.1446426}
+  - {x: 0.38961962, y: -1.2393267}
+  - {x: 0.0039063767, y: -1.311244}
+  - {x: -0.41271552, y: -1.252694}
+  - {x: -0.6225517, y: -1.1268259}
+  - {x: -0.8003743, y: 0.5095085}
+  - {x: -0.90575033, y: 0.62098116}
+  - {x: -0.94504374, y: 0.7224591}
+  - {x: -0.9059524, y: 0.8724438}
+  - {x: -0.80202514, y: 0.9706189}
+  - {x: -0.7666061, y: 1.1184675}
+  - {x: -0.5952347, y: 1.2359015}
+  - {x: -0.35414895, y: 1.2829266}
+  - {x: 0.07013933, y: 1.3098762}
+  - {x: 0.26037687, y: 1.3067003}
+  - {x: 0.5933431, y: 1.2215672}
+  - {x: 0.7405975, y: 1.1118914}
+  - {x: 0.8967361, y: 0.8575502}
+  - {x: 0.91732836, y: 0.7164443}
+  - {x: 0.898965, y: 0.61161125}
+  - {x: 0.78224623, y: 0.48906928}
+  - {x: 0.6732673, y: -0.6302381}
+  - {x: 0.5813754, y: -1.1286709}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

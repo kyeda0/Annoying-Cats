@@ -4,14 +4,20 @@ using TMPro;
 public class TextCoins : MonoBehaviour
 {
 
-   private static int coins = 0;
-   [SerializeField] private static TextMeshProUGUI textcoin;
+   public int _coins;
+   [SerializeField] private  TextMeshProUGUI textcoin;
 
+    private void Update(){
+        textcoin.text = "Coins:"+ _coins;
+        _coins = PlayerPrefs.GetInt("AddCoins");
 
-    public static void TakeCoins()
+    }
+    public  void TakeCoins()
     {
-        coins++;
-        textcoin.text = "Coins" + coins;
+        _coins +=100000;
+        textcoin.text = "Coins:"+ _coins;
+        PlayerPrefs.SetInt("AddCoins", _coins);
+        PlayerPrefs.Save();
     }
 
 }

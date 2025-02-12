@@ -7,9 +7,10 @@ TagManager:
   - Block
   - Coins
   - SpawnPoint
-  - TextScore
   - Animations
   - MainPlayer
+  - TextAll
+  - TextCoins
   layers:
   - Default
   - TransparentFX
