@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class Music : MonoBehaviour
 {
-    private  AudioSource _audio;
+    public  AudioSource _audio;
     private  float _musicVol;
     [SerializeField] private Slider _slider;
     private  void Start()
@@ -11,6 +11,8 @@ public class Music : MonoBehaviour
         _audio = GetComponent<AudioSource>();
         _musicVol =  PlayerPrefs.GetFloat("Audio");  
         _slider.value = PlayerPrefs.GetFloat("Slider");  
+        _audio.Play();
+        _audio.loop = true;
     }
     void Update()
     {
@@ -24,4 +26,5 @@ public class Music : MonoBehaviour
     {
         _musicVol = _volume;
     }
+  
 }

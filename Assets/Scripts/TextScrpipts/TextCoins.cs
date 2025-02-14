@@ -14,7 +14,7 @@ public class TextCoins : MonoBehaviour
     }
     public  void TakeCoins()
     {
-        _coins +=100000;
+        _coins ++;
         textcoin.text = "Coins:"+ _coins;
         PlayerPrefs.SetInt("AddCoins", _coins);
         PlayerPrefs.Save();

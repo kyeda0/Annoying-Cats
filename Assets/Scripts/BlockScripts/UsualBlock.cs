@@ -16,7 +16,7 @@ public class UsualBlock : Block
             GameObject.FindGameObjectWithTag("TextAll").GetComponent<TextScore>().ShowHightScore();
             GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>()._panels[0].SetActive(false);
             GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>()._panels[1].SetActive(true);
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>()._music.Pause();
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<Music>()._audio.Pause();
             Time.timeScale = 0;
         }
     }
