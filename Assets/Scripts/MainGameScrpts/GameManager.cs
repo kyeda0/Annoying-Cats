@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class GameManager : Block
+public class GameManager : MonoBehaviour
 {
 
     [SerializeField] private GameObject _player;

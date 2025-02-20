@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class UsualBlock : Block
+public class UsualBlock : AllBlock
 {
     private void LateUpdate(){
         FallingBlock();
         DeleteBlock();
     }
-    public new void FallingBlock(){base.FallingBlock();}
-    public new void DeleteBlock(){base.DeleteBlock();}
+    private  new void FallingBlock(){base.FallingBlock();}
+    private new void DeleteBlock(){base.DeleteBlock();}
 
      private void OnTriggerEnter2D(Collider2D other)
     {
@@ -16,7 +16,7 @@ public class UsualBlock : Block
             GameObject.FindGameObjectWithTag("TextAll").GetComponent<TextScore>().ShowHightScore();
             GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>()._panels[0].SetActive(false);
             GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>()._panels[1].SetActive(true);
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<Music>()._audio.Pause();
+            GameObject.FindGameObjectWithTag("MusicPlayer").GetComponent<Music>()._audio.Pause();
             Time.timeScale = 0;
         }
     }

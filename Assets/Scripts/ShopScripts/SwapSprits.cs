@@ -9,8 +9,9 @@ public class SwapSprites : MonoBehaviour
     [SerializeField] private Text _countSprite;
     [SerializeField] private TextMeshProUGUI _priceText;
     [SerializeField] private SpriteRenderer _playerSpriteRenderer; 
+    [SerializeField] private Text _textButton;
     private int _currentSkinIndex;
-    private int _price = 100;
+    private int _price = 50;
     private int _thisCoins;
     private bool[] _purchasedSkins; 
 
@@ -80,12 +81,15 @@ public class SwapSprites : MonoBehaviour
 
         if (_purchasedSkins[_currentSkinIndex])
         {
-            _priceText.text = "Equip";
+            _priceText.text = "Do you have";
+            _textButton.text = "Equip";
         }
         else
         {
-            _price = 100 * (_currentSkinIndex + 1);
+            _price = 50 * (_currentSkinIndex + 1);
             _priceText.text = $"Buy for {_price}";
+            _textButton.text = "Buy";
+
         }
     }
 }

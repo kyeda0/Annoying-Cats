@@ -12,10 +12,10 @@ public class Player : MonoBehaviour
         _player = GetComponent<Rigidbody2D>();
         _spritePlayer = Resources.LoadAll<Sprite>("Skins");
         int _selectSkinIndex = PlayerPrefs.GetInt("SelectedSkinIndex",0);
-        if (_selectSkinIndex >= 0 && _selectSkinIndex < _spritePlayer.Length)
-        {
-            GetComponent<SpriteRenderer>().sprite = _spritePlayer[_selectSkinIndex];
-        }
+            if (_selectSkinIndex >= 0 && _selectSkinIndex < _spritePlayer.Length)
+            {
+                GetComponent<SpriteRenderer>().sprite = _spritePlayer[_selectSkinIndex];
+            }
     }
 
     void Update()
@@ -24,9 +24,10 @@ public class Player : MonoBehaviour
     }
 
     private void Move(){
+
+        Vector3 _tochPos =  Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if(Input.GetMouseButton(0)) 
         {
-            Vector3 _tochPos =  Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if(_tochPos.x<0)
             {
                 _player.velocity = Vector2.left * _moveSpeed;

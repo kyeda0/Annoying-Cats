@@ -1,6 +1,6 @@
 using System.Runtime.InteropServices;
 using UnityEngine;  
-public abstract class  Block : MonoBehaviour,IBlocks
+public abstract class  AllBlock : MonoBehaviour,IBlocks
 {
     [SerializeField] protected float _fallSpeed;
     private float _acceleration = 9.8f;

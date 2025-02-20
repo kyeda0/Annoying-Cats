@@ -156,6 +156,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.kyeda.AnnoyingCats
     Standalone: com.DefaultCompany.2DProject
+    iPhone: com.kyeda.Annoying-Cats
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -871,7 +872,13 @@ PlayerSettings:
   XboxOneOverrideIdentityName: 
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
-  cloudServicesEnabled: {}
+  cloudServicesEnabled:
+    Build: 0
+    Game Performance: 0
+    Legacy Analytics: 0
+    Purchasing: 0
+    UDP: 0
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -891,11 +898,11 @@ PlayerSettings:
   apiCompatibilityLevel: 3
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 
+  cloudProjectId: 464e76c2-2b13-484e-9a7d-6007e11cd46e
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: Annoying Cats
+  organizationId: unity_312dr34322
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

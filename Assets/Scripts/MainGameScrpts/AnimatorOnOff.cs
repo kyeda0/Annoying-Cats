@@ -24,7 +24,7 @@ public class AnimatorOnOff : MonoBehaviour
     }
 
     public void ChangeText(){
-        _text.text = "Dodeg and\n collect coins";
+        _text.text = "Dodeg and\n Collect coins";
         _text.fontSize = 80;
     }
 
