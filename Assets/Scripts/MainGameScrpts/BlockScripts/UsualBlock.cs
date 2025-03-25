@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using YG;
 public class UsualBlock : AllBlock
 {
     private void LateUpdate(){
@@ -18,6 +18,10 @@ public class UsualBlock : AllBlock
             GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>()._panels[1].SetActive(true);
             GameObject.FindGameObjectWithTag("MusicPlayer").GetComponent<Music>()._audio.Pause();
             Time.timeScale = 0;
+            if (YandexGame.SDKEnabled)
+            {
+                YandexGame.FullscreenShow();
+            }
         }
     }
 }
